@@ -228,3 +228,134 @@
       -webkit-transform: rotate(360deg);
     }
   }
+
+
+
+
+  /* */
+  
+  #container{
+    opacity: 0;  /* display = none과 동일한 기능, 표시할때는 값으로 1을 주면됨 */
+    position: absolute;
+    top:18vh;
+    left:18vh;
+    width: 500px;
+    height: 700px;
+    border-top:1px rgb(202, 198, 198) solid; 
+    z-index: inherit; color: aliceblue;
+    transition: all 1.5s;   /*부드럽게 display 효과*/
+  }
+
+  #text{
+  position: absolute;
+  z-index: inherit;
+  color: rgb(175, 196, 214);
+  top:10vh;
+  left:18vh;
+  }
+
+  #container_2 {
+    margin-top: 250px;
+    opacity: 0;
+    transition: all 2s;
+    border-top: 1px rgb(202, 198, 198) solid;
+    border-bottom: 0.5px rgb(202, 198, 198) solid;
+  }
+
+  #container_3 {
+    opacity: 0;
+    transition: all 2.2s;
+    display: flex;
+  }
+
+  /* #github_repo {
+    width: 100px;
+    display: flex;
+    justify-items: center;
+} */
+h4 {margin: 0.1em; margin-block:1em;}
+#github_repo {display: grid; grid-template-columns: repeat(5, 1fr); margin-top:1vh;}
+#github_repo > h4 {margin:0.7em; margin-block: 0.5;}
+
+
+a {
+  text-decoration: none;
+  color: #a5a5a5;
+}
+
+
+a:hover {
+  text-decoration: underline;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: all 1.5s;
+}
+
+@keyframes fadeIn {
+0% {
+opacity: 0;
+}
+100% {
+opacity: 1;
+}
+}
+
+.modal-content {
+background-color: #74747400;
+margin: 0;
+padding: 1px;
+border: 1px solid #b1b1b1;
+min-width: 85%;
+max-width: 90%;
+max-height: 50%;
+overflow: auto;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+animation: fadeIn 0.5s;
+position: absolute;
+left: 50%; /* 모달을 뷰포트 중앙에 위치시키기 */
+top: 50%;
+transform: translate(-50%, -50%); /* 상단과 좌측의 위치를 조정 */
+}
+
+
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.github_list {
+  margin-left: 7px;
+}
+
+.markdown-body {
+    white-space: break-spaces;
+}
+
+  @media ( max-width: 768px ) {
+    #container { width: 450px; left: 5vh; }
+    #text { left: 5vh;}
+    #github_repo {display: grid; grid-template-columns: repeat(2, 1fr); grid-column-gap: -5px; margin-top: 1.5vh}
+    #github_list {margin: 0.5em;}
+    #container_2 {margin-top: 50px;}
+    #text, #container, #container_2, #container_3 {left:2vh;}
+  }
